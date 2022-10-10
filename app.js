@@ -23,15 +23,15 @@ For example, when an array is passed like [19, 5, 42, 2, 77], the output should 
 // }
 // console.log(Array);
 
-const arr = [14, 58, 20, 77, 66, 82, 42, 67, 42,5];
-const arr1= [15,10]
+const arr = [14, 58, 20, 77, 66, 82, 42, 67, 42, 5];
+const arr1 = [15, 10];
 
-function min2Numbers(array){
-    if(array.length>4){
-const order = array.sort((a, b) => a - b);
-let sum= order[0]+order[1]
-return sum;
-}
+function min2Numbers(array) {
+  if (array.length > 4) {
+    const order = array.sort((a, b) => a - b);
+    let sum = order[0] + order[1];
+    return sum;
+  }
 }
 console.log(min2Numbers(arr1));
 console.log(min2Numbers(arr));
@@ -53,16 +53,16 @@ Testing: [1, 1, 1, 1] ==> 15
 Testing: [1, 0, 1, 1] ==> 11 
 However, the arrays can have varying lengths, not just limited to 4. */
 
-let x= [1,1,1,1,1,1]
+let x = [1, 1, 1, 1, 1, 1];
 
-function bin2dec(arr){
-    let sum=0
-    for (let i=0 ; i<arr.length ; i++){
-        sum= sum+ arr[i]* Math.pow(2, (arr.length-1-i));
-    }
-        return sum;
-    }
-  console.log(bin2dec(x))
+function bin2dec(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i] * Math.pow(2, arr.length - 1 - i);
+  }
+  return sum;
+}
+console.log(bin2dec(x));
 
 /*Ex2.3 - Find the Next Perfect Square 
  
@@ -81,20 +81,15 @@ findNextSquare(121) --> returns 144
 findNextSquare(625) --> returns 676 
 findNextSquare(114) --> returns -1 since 114 is not a perfect */
 
-
 function findNextSquare(a) {
-    
-    newA=Math.sqrt(a);
-    if (a%newA==0){
-    const next= Math.pow((newA+1),2)
+  newA = Math.sqrt(a);
+  if (a % newA == 0) {
+    const next = Math.pow(newA + 1, 2);
     return next;
-    }
-    else return -1;
+  } else return -1;
 }
 
-
 console.log(findNextSquare(25));
-
 
 /*Ex2.4 - Unique 
  
@@ -103,12 +98,12 @@ findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
 findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55 
 It’s guaranteed that array contains at least 3 numbers. */
 
-findUniq=[ 1, 1, 1, 2, 1, 1 ]
+findUniq = [1, 1, 1, 2, 1, 1];
 
 function Unique(arr) {
-const order2 = arr.sort((a, b) => a - b);
-uni=order2.slice(-1)[0]
-return uni
+  const order2 = arr.sort((a, b) => a - b);
+  uni = order2.slice(-1)[0];
+  return uni;
 }
 console.log(Unique(findUniq));
 
@@ -125,17 +120,15 @@ summation(8) -> 36
 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 */
 
 function Summation(number) {
-    let sum=0
-    while(number!=0){
-        sum= sum+number
-        number--
-    }
-   return sum; 
+  let sum = 0;
+  while (number != 0) {
+    sum = sum + number;
+    number--;
+  }
+  return sum;
 }
 
-console.log(Summation(8)); 
-
-
+console.log(Summation(8));
 
 /*Ex2.6 - Years and Centuries 
  
@@ -149,17 +142,12 @@ centuryFromYear(  1900)  returns (19)
 centuryFromYear(1601)  returns (17) 
 centuryFromYear(2000)  returns (20) */
 
-
 function centuries(year) {
-    
-    let century=((Math.ceil(year/100)))
-    return century;
-    }
+  let century = Math.ceil(year / 100);
+  return century;
+}
 
 console.log(centuries(1705));
-
-
-
 
 /*Ex2.7 - Basic Math 
  
@@ -174,25 +162,22 @@ basicOp('-', 15, 18)       // Output: -3
 basicOp('*', 5, 5)         // Output: 25 
 basicOp('/', 49, 7)        // Output: 7 */
 
-function BasicMath(operation,a,b) {
-   switch (operation) {
+function BasicMath(operation, a, b) {
+  switch (operation) {
     case "+":
-        return a+b;
+      return a + b;
     case "-":
-        return a-b;
+      return a - b;
     case "*":
-        return a*b;
+      return a * b;
     case "/":
-        return a/b;
+      return a / b;
     default:
-        return undefined;
-   } 
-    
+      return undefined;
+  }
 }
 
-console.log(BasicMath("/",7,2));
-
-
+console.log(BasicMath("/", 7, 2));
 
 /*Math In Story  
 Ex3.1 - Growth Of population  
@@ -226,21 +211,18 @@ nb_year(1500000, 2.5, 10000, 2000000) -> 10
 Note: Don't forget to convert the percent parameter as a percentage in the body of your 
 function: if the parameter percent is 2 you have to convert it to 0.02.*/
 
-function nb_year(p0,percent,aug,p) {
-    let sum=0;
-    let year=0;
-    while (sum<=p) {
-    sum=p0+(p0*(percent/100))+aug
-    p0=sum;
-    year++ 
-    }
-   return year;
+function nb_year(p0, percent, aug, p) {
+  let sum = 0;
+  let year = 0;
+  while (sum <= p) {
+    sum = p0 + p0 * (percent / 100) + aug;
+    p0 = sum;
+    year++;
+  }
+  return year;
 }
 
-console.log(nb_year(1500, 5, 100, 5000))
- 
-   
-
+console.log(nb_year(1500, 5, 100, 5000));
 
 /*Ex3.2 - People on the Bus 
  
@@ -256,8 +238,7 @@ Take a look on the test cases.
 Please keep in mind that the test cases ensure that the number of people in the bus is always 
 >= 0. So the return integer can't be negative. 
 The second value in the first integer array is 0, since the bus is empty in the first bus stop. */
-   
- 
+
 /*Advanced Math 
 Ex4.1 - Fibonacci -  
 “Write a function to return an n element in Fibonacci sequence” is one of the most common 
@@ -274,18 +255,14 @@ this:
 or this: 
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...  */
 
-
-
 function Fibonacci(n) {
-    const fib = [0, 1];
-for (let i = 2; i < n; i++) {
-  fib[i] = fib[i - 2] + fib[i - 1];
+  const fib = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fib[i] = fib[i - 2] + fib[i - 1];
+  }
+  return fib;
 }
-return fib
-}
-console.log(Fibonacci(5))
-
-
+console.log(Fibonacci(5));
 
 /*Ex4.2 - Tribonacci - 
  
@@ -311,43 +288,36 @@ clearly specified ;)
 Basic Iteration Logic 
 */
 
-
 function Tribonacci(n) {
-var Tri = [0,0,1];
-for (let i = 3; i < n; i++) {
-    Tri[i] = Tri[i-3] + Tri[i - 2] + Tri[i - 1];
+  var Tri = [0, 0, 1];
+  for (let i = 3; i < n; i++) {
+    Tri[i] = Tri[i - 3] + Tri[i - 2] + Tri[i - 1];
+  }
+  return Tri;
 }
-return Tri
-}
-console.log(Tribonacci(10))
-
-
-
-
+console.log(Tribonacci(10));
 
 /*Ex5.1 - trimming string 
 It's pretty straightforward. Your goal is to create a function that removes the first and last 
 characters of a string. You're given one parameter, the original string. You don't have to worry 
 with strings with less than two characters. */
- 
+
 function popString(string) {
-   string= string.substring(1).slice(0, -1);
-   return string
+  string = string.substring(1).slice(0, -1);
+  return string;
 }
 console.log(popString("dani"));
-
 
 /*Ex5.2 - String Repeat 
 Write a function called repeat_str which repeats the given string src exactly count times. 
 repeatStr(6, "I") // "IIIIII" 
 repeatStr(5, "Hello") // "HelloHelloHelloHelloHello" */
 
-function repeat_str(n,str) {
-    str=str.repeat(n)
-    return str
+function repeat_str(n, str) {
+  str = str.repeat(n);
+  return str;
 }
-console.log(repeat_str(5,"a"));
-
+console.log(repeat_str(5, "a"));
 
 /*Ex5.3 - To Camel Case 
 Complete the method/function so that it converts dash/underscore delimited words into camel 
@@ -358,21 +328,19 @@ Examples
 toCamelCase("the-stealth-warrior") // returns "theStealthWarrior" 
  
 toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior" */
- 
+
 function toCamelCase(string) {
-    let arrrr=string.split("")
-    for(let i=0; i<arrrr.length; i++){
-        if (arrrr[i]=="_"||arrrr[i]=="-"){  
-            arrrr[i+1]= arrrr[i+1].toUpperCase()
-            arrrr[i]=arrrr[i].replace("-","").replace("_","")
-        }
+  let arrrr = string.split("");
+  for (let i = 0; i < arrrr.length; i++) {
+    if (arrrr[i] == "_" || arrrr[i] == "-") {
+      arrrr[i + 1] = arrrr[i + 1].toUpperCase();
+      arrrr[i] = arrrr[i].replace("-", "").replace("_", "");
     }
-    return arrrr.join("")
+  }
+  return arrrr.join("");
 }
 
 console.log(toCamelCase("asd-dani_gaf"));
-
-
 
 /*Ex5.4 - To Weird Case 
 Write a function toWeirdCase (weirdcase in Ruby) that accepts a string, and returns the same 
@@ -386,22 +354,17 @@ toWeirdCase( "String" );//=> returns "StRiNg"
 toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe" */
 
 function WeirdCase(string) {
-    let arr_Weird=string.split("")
-    for(let i=0; i<arr_Weird.length; i+=2){
-        arr_Weird[i]=arr_Weird[i].toUpperCase()
-        }
-    for(let i=1; i<arr_Weird.length; i+=2){
-        arr_Weird[i]=arr_Weird[i].toLowerCase()
-    }
-    return arr_Weird.join("")
+  let arr_Weird = string.split("");
+  for (let i = 0; i < arr_Weird.length; i += 2) {
+    arr_Weird[i] = arr_Weird[i].toUpperCase();
+  }
+  for (let i = 1; i < arr_Weird.length; i += 2) {
+    arr_Weird[i] = arr_Weird[i].toLowerCase();
+  }
+  return arr_Weird.join("");
 }
 
-
 console.log(WeirdCase("str ing"));
-    
-
-
-
 
 /*Ex5.5 - Abbreviate two words 
 Write a function to convert a name into initials. This kata strictly takes two words with one space 
@@ -412,13 +375,12 @@ Sam Harris => S.H
 Patrick Feeney => P.F*/
 
 function Abbreviate(str) {
-    let arr_Abbrev=str.split(" ")
-    const firstName=(arr_Abbrev[0].toUpperCase())
-    const lastName=(arr_Abbrev[1].toUpperCase())
-    return (firstName[0]+"."+lastName[0])
+  let arr_Abbrev = str.split(" ");
+  const firstName = arr_Abbrev[0].toUpperCase();
+  const lastName = arr_Abbrev[1].toUpperCase();
+  return firstName[0] + "." + lastName[0];
 }
 console.log(Abbreviate("arel hagag"));
-
 
 /*Ex5.6 - Mask 
  
@@ -439,39 +401,34 @@ maskify("Nananananananananananananananana Batman!") ==
  */
 
 function Mask(string) {
-    if (string.length>4){
-        arr_mask=string.split("")
-        for(let i=0;i<arr_mask.length-4;i++){
-            arr_mask[i]="#"
-        }
+  if (string.length > 4) {
+    arr_mask = string.split("");
+    for (let i = 0; i < arr_mask.length - 4; i++) {
+      arr_mask[i] = "#";
     }
-    return arr_mask.join("")
-    
+  }
+  return arr_mask.join("");
 }
 
 console.log(Mask("arel_hagag"));
- 
 
 /*Ex5.7 - shortest words 
 Simple, given a string of words, return the length of the shortest word(s). 
-String will never be empty and you do not need to account for different data types.  */ 
- 
- function shortestWords(str) {
-    
-    let arr=str.split(" ")
-    let word=arr[0].length
-    for(let i=1;i<arr.length;i++){
-        if(arr[i].length<word){
-            word=arr[i].length
-        }  
+String will never be empty and you do not need to account for different data types.  */
+
+function shortestWords(str) {
+  let arr = str.split(" ");
+  let word = arr[0].length;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].length < word) {
+      word = arr[i].length;
     }
-    return word;
- }
- 
+  }
+  return word;
+}
 
 console.log(shortestWords("arel hagag abc a ggg"));
 
- 
 /*Advanced Iteration Logic 
 Ex6.1 - Mumbling 
  
@@ -483,13 +440,6 @@ accum("RqaEzty") -> "R-Qq-Aaa-Eeeezzzz-Tttttt-Yyyyyyy"
 accum("cwAt") -> "C-Ww-Aaa-Tttt" 
 The parameter of accum is a string which includes only letters from ​a..z​ and ​A..Z​. */
 
-
-
-
-
-
-
- 
 /*Ex6.2 - Counting Duplicates  
  
 Count the number of Duplicates 
@@ -505,10 +455,6 @@ Example
 "aA11" -> 2 # 'a' and '1' 
 "ABBA" -> 2 # 'A' and 'B' each occur twice */
 
-
-
- 
- 
 /*Ex6.3 - organize strings 
  
 Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the 
@@ -525,12 +471,29 @@ longest(a, b) -> "abcdefklmopqwxy"
 a = "abcdefghijklmnopqrstuvwxyz" 
 longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"   */
 
+// function longest(s1,s2) {
+// let arr=s1.concat(s2).split(" ");
+// let new_arr=[]
+//     for(let i=0;i<arr.length;i++){
+//         if (!new_arr.includes(arr[i])){
+//             new_arr.push(arr[i])
+//         }
+//     }
+//     return new_arr.sort().join("")
+// }
+function longest(s1, s2) {
+  let arr = s1.split("").concat(s2.split(""));
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!newArr.includes(arr[i])) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr.sort().join("");
+}
 
+console.log(longest("arelhagag", "danihaf"));
 
-
-
-
- 
 /*Ex6.4 - isogram 
  
 An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement 
@@ -539,4 +502,17 @@ empty string is an isogram. Ignore letter case.
 isIsogram("Dermatoglyphics") == true 
 isIsogram("aba") == false 
 isIsogram("moOse") == false // -- ignore letter case */
- 
+
+function isIsogram(string) {
+  let arr = string.toLowerCase().split("");
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (newArr.includes(arr[i])) {
+      return false;
+    } else {
+      newArr.push(arr[i]);
+    }
+  }
+  return true;
+}
+console.log(isIsogram("accB"));
