@@ -174,9 +174,23 @@ basicOp('-', 15, 18)       // Output: -3
 basicOp('*', 5, 5)         // Output: 25 
 basicOp('/', 49, 7)        // Output: 7 */
 
+function BasicMath(operation,a,b) {
+   switch (operation) {
+    case "+":
+        return a+b;
+    case "-":
+        return a-b;
+    case "*":
+        return a*b;
+    case "/":
+        return a/b;
+    default:
+        return undefined;
+   } 
+    
+}
 
-
-
+console.log(BasicMath("/",7,2));
 
 
 
@@ -223,9 +237,11 @@ function nb_year(p0,percent,aug,p) {
    return year;
 }
 
-// console.log(nb_year(1500, 5, 100, 5000))
+console.log(nb_year(1500, 5, 100, 5000))
  
    
+
+
 /*Ex3.2 - People on the Bus 
  
 Number of people in the bus 
@@ -260,6 +276,16 @@ or this:
 
 
 
+function Fibonacci(n) {
+    const fib = [0, 1];
+for (let i = 2; i < n; i++) {
+  fib[i] = fib[i - 2] + fib[i - 1];
+}
+return fib
+}
+console.log(Fibonacci(5))
+
+
 
 /*Ex4.2 - Tribonacci - 
  
@@ -286,21 +312,44 @@ Basic Iteration Logic
 */
 
 
+function Tribonacci(n) {
+var Tri = [0,0,1];
+for (let i = 3; i < n; i++) {
+    Tri[i] = Tri[i-3] + Tri[i - 2] + Tri[i - 1];
+}
+return Tri
+}
+console.log(Tribonacci(10))
+
+
+
+
 
 /*Ex5.1 - trimming string 
 It's pretty straightforward. Your goal is to create a function that removes the first and last 
 characters of a string. You're given one parameter, the original string. You don't have to worry 
 with strings with less than two characters. */
  
-
-
+function popString(string) {
+   string= string.substring(1).slice(0, -1);
+   return string
+}
+console.log(popString("dani"));
 
 
 /*Ex5.2 - String Repeat 
 Write a function called repeat_str which repeats the given string src exactly count times. 
 repeatStr(6, "I") // "IIIIII" 
-repeatStr(5, "Hello") // "HelloHelloHelloHelloHello" 
-Ex5.3 - To Camel Case 
+repeatStr(5, "Hello") // "HelloHelloHelloHelloHello" */
+
+function repeat_str(n,str) {
+    str=str.repeat(n)
+    return str
+}
+console.log(repeat_str(5,"a"));
+
+
+/*Ex5.3 - To Camel Case 
 Complete the method/function so that it converts dash/underscore delimited words into camel 
 casing. The first word within the output should be capitalized only if the original word was 
 capitalized (known as Upper Camel Case, also often referred to as Pascal case). 
@@ -310,7 +359,18 @@ toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
  
 toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior" */
  
+function toCamelCase(string) {
+    let arrrr=string.split("")
+    for(let i=0; i<arrrr.length; i++){
+        if (arrrr[i]=="_"||arrrr[i]=="-"){  
+            arrrr[i+1]= arrrr[i+1].toUpperCase()
+            arrrr[i]=arrrr[i].replace("-","").replace("_","")
+        }
+    }
+    return arrrr.join("")
+}
 
+console.log(toCamelCase("asd-dani_gaf"));
 
 
 
@@ -323,18 +383,41 @@ The passed in string will only consist of alphabetical characters and spaces(' '
 be present if there are multiple words. Words will be separated by a single space(' '). 
 Examples: 
 toWeirdCase( "String" );//=> returns "StRiNg" 
- 
-toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe" 
-Ex5.5 - Abbreviate two words 
+toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe" */
+
+function WeirdCase(string) {
+    let arr_Weird=string.split("")
+    for(let i=0; i<arr_Weird.length; i+=2){
+        arr_Weird[i]=arr_Weird[i].toUpperCase()
+        }
+    for(let i=1; i<arr_Weird.length; i+=2){
+        arr_Weird[i]=arr_Weird[i].toLowerCase()
+    }
+    return arr_Weird.join("")
+}
+
+
+console.log(WeirdCase("str ing"));
+    
+
+
+
+
+/*Ex5.5 - Abbreviate two words 
 Write a function to convert a name into initials. This kata strictly takes two words with one space 
 in between them. 
 The output should be two capital letters with a dot separating them. 
 It should look like this: 
 Sam Harris => S.H 
-Patrick Feeney => P.F6.6 */
- 
+Patrick Feeney => P.F*/
 
-
+function Abbreviate(str) {
+    let arr_Abbrev=str.split(" ")
+    const firstName=(arr_Abbrev[0].toUpperCase())
+    const lastName=(arr_Abbrev[1].toUpperCase())
+    return (firstName[0]+"."+lastName[0])
+}
+console.log(Abbreviate("arel hagag"));
 
 
 /*Ex5.6 - Mask 
@@ -355,17 +438,41 @@ maskify("Nananananananananananananananana Batman!") ==
 "####################################man!" 
  */
 
+function Mask(string) {
+    if (string.length>4){
+        arr_mask=string.split("")
+        for(let i=0;i<arr_mask.length-4;i++){
+            arr_mask[i]="#"
+        }
+    }
+    return arr_mask.join("")
+    
+}
 
-
-
+console.log(Mask("arel_hagag"));
  
+
 /*Ex5.7 - shortest words 
 Simple, given a string of words, return the length of the shortest word(s). 
-String will never be empty and you do not need to account for different data types.   
+String will never be empty and you do not need to account for different data types.  */ 
  
+ function shortestWords(str) {
+    
+    let arr=str.split(" ")
+    let word=arr[0].length
+    for(let i=1;i<arr.length;i++){
+        if(arr[i].length<word){
+            word=arr[i].length
+        }  
+    }
+    return word;
+ }
  
+
+console.log(shortestWords("arel hagag abc a ggg"));
+
  
-Advanced Iteration Logic 
+/*Advanced Iteration Logic 
 Ex6.1 - Mumbling 
  
 This time no story, no theory. The examples below show you how to write function 
