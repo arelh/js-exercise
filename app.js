@@ -1,3 +1,4 @@
+console.log("-----------------------1.1------------------------")
 /*Ex1.1 - Yes or No 
 Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" 
 string for false*/
@@ -11,6 +12,8 @@ function bool(n) {
 }
 console.log(bool(5));
 
+
+console.log("-----------------------2.1------------------------")
 /*Ex2.1 - Sum of lowest numbers 
 Create a function that returns the sum of the two lowest positive numbers given an array of 
 minimum 4 positive integers. No floats or non-positive integers will be passed. 
@@ -35,7 +38,7 @@ function min2Numbers(array) {
 }
 console.log(min2Numbers(arr1));
 console.log(min2Numbers(arr));
-
+console.log("-----------------------2.2------------------------")
 /*Ex2.2 - One and Zero - Binary  
 Given an array of ones and zeroes, convert the equivalent binary value to an integer. 
  
@@ -63,7 +66,7 @@ function bin2dec(arr) {
   return sum;
 }
 console.log(bin2dec(x));
-
+console.log("-----------------------2.3------------------------")
 /*Ex2.3 - Find the Next Perfect Square 
  
 You might know some pretty large perfect squares. But what about the NEXT one? 
@@ -90,7 +93,7 @@ function findNextSquare(a) {
 }
 
 console.log(findNextSquare(25));
-
+console.log("-----------------------2.4------------------------")
 /*Ex2.4 - Unique 
  
 There is an array with some numbers. All numbers are equal except for one. Try to find it! 
@@ -106,7 +109,7 @@ function Unique(arr) {
   return uni;
 }
 console.log(Unique(findUniq));
-
+console.log("-----------------------2.5------------------------")
 /*Ex2.5 - Summation 
  
 Write a program that finds the summation of every number from 1 to num. The number will 
@@ -127,7 +130,7 @@ function Summation(number) {
   }
   return sum;
 }
-
+console.log("-----------------------2.6------------------------")
 console.log(Summation(8));
 
 /*Ex2.6 - Years and Centuries 
@@ -148,7 +151,7 @@ function centuries(year) {
 }
 
 console.log(centuries(1705));
-
+console.log("-----------------------2.7------------------------")
 /*Ex2.7 - Basic Math 
  
 Your task is to create a function that does four basic . 
@@ -178,7 +181,7 @@ function BasicMath(operation, a, b) {
 }
 
 console.log(BasicMath("/", 7, 2));
-
+console.log("-----------------------3.1------------------------")
 /*Math In Story  
 Ex3.1 - Growth Of population  
  
@@ -223,7 +226,7 @@ function nb_year(p0, percent, aug, p) {
 }
 
 console.log(nb_year(1500, 5, 100, 5000));
-
+console.log("-----------------------3.2------------------------")
 /*Ex3.2 - People on the Bus 
  
 Number of people in the bus 
@@ -238,7 +241,8 @@ Take a look on the test cases.
 Please keep in mind that the test cases ensure that the number of people in the bus is always 
 >= 0. So the return integer can't be negative. 
 The second value in the first integer array is 0, since the bus is empty in the first bus stop. */
-
+console.log("-----------------------3.2------------------------")
+console.log("-----------------------4.1------------------------")
 /*Advanced Math 
 Ex4.1 - Fibonacci -  
 “Write a function to return an n element in Fibonacci sequence” is one of the most common 
@@ -263,7 +267,7 @@ function Fibonacci(n) {
   return fib;
 }
 console.log(Fibonacci(5));
-
+console.log("-----------------------4.2------------------------")
 /*Ex4.2 - Tribonacci - 
  
 Well met with Fibonacci bigger brother, AKA Tribonacci. 
@@ -296,7 +300,7 @@ function Tribonacci(n) {
   return Tri;
 }
 console.log(Tribonacci(10));
-
+console.log("-----------------------5.1------------------------")
 /*Ex5.1 - trimming string 
 It's pretty straightforward. Your goal is to create a function that removes the first and last 
 characters of a string. You're given one parameter, the original string. You don't have to worry 
@@ -307,6 +311,7 @@ function popString(string) {
   return string;
 }
 console.log(popString("dani"));
+console.log("-----------------------5.2------------------------")
 
 /*Ex5.2 - String Repeat 
 Write a function called repeat_str which repeats the given string src exactly count times. 
@@ -318,6 +323,7 @@ function repeat_str(n, str) {
   return str;
 }
 console.log(repeat_str(5, "a"));
+console.log("-----------------------5.3------------------------")
 
 /*Ex5.3 - To Camel Case 
 Complete the method/function so that it converts dash/underscore delimited words into camel 
@@ -341,6 +347,7 @@ function toCamelCase(string) {
 }
 
 console.log(toCamelCase("asd-dani_gaf"));
+console.log("-----------------------5.4------------------------")
 
 /*Ex5.4 - To Weird Case 
 Write a function toWeirdCase (weirdcase in Ruby) that accepts a string, and returns the same 
@@ -365,6 +372,7 @@ function WeirdCase(string) {
 }
 
 console.log(WeirdCase("str ing"));
+console.log("-----------------------5.5------------------------")
 
 /*Ex5.5 - Abbreviate two words 
 Write a function to convert a name into initials. This kata strictly takes two words with one space 
@@ -381,6 +389,7 @@ function Abbreviate(str) {
   return firstName[0] + "." + lastName[0];
 }
 console.log(Abbreviate("arel hagag"));
+console.log("-----------------------5.6------------------------")
 
 /*Ex5.6 - Mask 
  
@@ -411,6 +420,7 @@ function Mask(string) {
 }
 
 console.log(Mask("arel_hagag"));
+console.log("-----------------------5.7------------------------")
 
 /*Ex5.7 - shortest words 
 Simple, given a string of words, return the length of the shortest word(s). 
@@ -428,6 +438,7 @@ function shortestWords(str) {
 }
 
 console.log(shortestWords("arel hagag abc a ggg"));
+console.log("-----------------------6.1------------------------")
 
 /*Advanced Iteration Logic 
 Ex6.1 - Mumbling 
@@ -439,6 +450,19 @@ accum("abcd") -> "A-Bb-Ccc-Dddd"
 accum("RqaEzty") -> "R-Qq-Aaa-Eeeezzzz-Tttttt-Yyyyyyy" 
 accum("cwAt") -> "C-Ww-Aaa-Tttt" 
 The parameter of accum is a string which includes only letters from ​a..z​ and ​A..Z​. */
+
+
+function IterationLogic (string) {
+    let arr=string.toUpperCase().split(""); 
+    for ( let i = 0; i <arr.length; i++) {
+        arr[i] = arr[i] + arr[i].toLowerCase().repeat(i);
+    }
+    return arr.join("-")
+    
+}
+  console.log(IterationLogic("acB"));
+
+  console.log("-----------------------6.2------------------------")
 
 /*Ex6.2 - Counting Duplicates  
  
@@ -454,11 +478,12 @@ Example
 "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice 
 "aA11" -> 2 # 'a' and '1' 
 "ABBA" -> 2 # 'A' and 'B' each occur twice */
+console.log("-----------------------6.3------------------------")
 
 /*Ex6.3 - organize strings 
  
-Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the 
-longest possible, containing distinct letters, 
+Take 2 strings s1 and s2 including only  from ato z. Return a new sorted string, the 
+longest possible, containing distinct letters, letters
  
 each taken only once - coming from s1 or s2. 
  
@@ -471,16 +496,8 @@ longest(a, b) -> "abcdefklmopqwxy"
 a = "abcdefghijklmnopqrstuvwxyz" 
 longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"   */
 
-// function longest(s1,s2) {
-// let arr=s1.concat(s2).split(" ");
-// let new_arr=[]
-//     for(let i=0;i<arr.length;i++){
-//         if (!new_arr.includes(arr[i])){
-//             new_arr.push(arr[i])
-//         }
-//     }
-//     return new_arr.sort().join("")
-// }
+
+
 function longest(s1, s2) {
   let arr = s1.split("").concat(s2.split(""));
   const newArr = [];
@@ -493,6 +510,7 @@ function longest(s1, s2) {
 }
 
 console.log(longest("arelhagag", "danihaf"));
+console.log("-----------------------6.4------------------------")
 
 /*Ex6.4 - isogram 
  
